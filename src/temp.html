@@ -1,0 +1,1056 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+    <meta http-equiv="Content-Style-Type" content="text/css"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="description"
+          content="webDiplomacy is an online, multiplayer, turn-based strategy game that lets you play Diplomacy online."/>
+    <meta name="keywords"
+          content="diplomacy,diplomacy game,online diplomacy,classic diplomacy,web diplomacy,diplomacy board game,play diplomacy,php diplomacy"/>
+    <link rel="shortcut icon" href="favicon.ico"/>
+    <link rel="icon" href="favicon.ico"/>
+    <link rel="stylesheet" href="css/global.css" type="text/css"/>
+    <link rel="stylesheet" href="css/gamepanel.css" type="text/css"/>
+    <link rel="stylesheet" href="css/home.css" type="text/css"/>
+    <link rel="stylesheet" href="variants/Classic/resources/style.css" type="text/css"/>
+    <link rel="stylesheet" href="variants/World/resources/style.css" type="text/css"/>
+    <link rel="stylesheet" href="variants/AncMed/resources/style.css" type="text/css"/>
+    <script type="text/javascript" src="contrib/js/prototype.js"></script>
+    <script type="text/javascript" src="contrib/js/scriptaculous.js"></script>
+    <link rel="stylesheet" type="text/css" href="contrib/js/pushup/src/css/pushup.css"/>
+    <script type="text/javascript" src="contrib/js/pushup/src/js/pushup.js"></script>
+    <script type="text/javascript">
+        STATICSRV = "";
+    </script>
+    <title>Games - webDiplomacy</title>
+</head>
+<body><!-- Menu begin. -->
+<div id="header">
+    <div id="header-container">
+        <a href="./">
+            <img id="logo" src="images/logo.png" alt="webDiplomacy"/>
+        </a>
+
+        <div style="float:right; text-align:right; width:100%">
+            <div id="header-welcome">
+                Welcome, <a href="./profile.php?userID=37463">arcticfox (194 <img src="images/icons/points.png" alt="D"
+                                                                                  title="webDiplomacy points"/>)</a> -
+                <span class="logon">(<a href="logon.php?logoff=on" class="light">Log off</a>)</span>
+            </div>
+            <div id="header-goto"><a href="index.php" title="See what's happening">Home</a><a href="forum.php"
+                                                                                              title="The forum; chat, get help, help others, arrange games, discuss strategies">Forum</a><a
+                    href="gamelistings.php?" class="current"
+                    title="Game listings; a searchable list of the games on this server">Games</a><a
+                    href="gamecreate.php" title="Start up a new game">New game</a><a href="usercp.php"
+                                                                                     title="Change your user specific settings">Settings</a><a
+                    href="help.php" title="Get help and information; guides, intros, FAQs, stats, links">Help</a></div>
+        </div>
+    </div>
+</div>
+<div id="seperator"></div>
+<div id="seperator-fixed"></div>
+<!-- Menu end. -->
+<noscript>
+    <div class="content-notice">
+        <p class="notice">You do not have JavaScript enabled. It is required to use webDiplomacy fully.</p>
+    </div>
+</noscript>
+<div class="content">
+    <div class="gamelistings-tabs"><a title="Active games which you have joined"
+                                      href="gamelistings.php?page-games=1&amp;gamelistType=My games&amp;searchOn=on"
+                                      class="current">My games</a> <a title="Games which haven't yet started"
+                                                                      href="gamelistings.php?page-games=1&amp;gamelistType=New">New
+        (~49)</a> <a title="Games which have open spaces" href="gamelistings.php?page-games=1&amp;gamelistType=Open">Open
+        (~105)</a> <a title="Games which are going on now" href="gamelistings.php?page-games=1&amp;gamelistType=Active">Active
+        (~530)</a> <a title="Games which have ended" href="gamelistings.php?page-games=1&amp;gamelistType=Finished">Finished
+        (~29532)</a> <a title="The full game listing search panel"
+                        href="gamelistings.php?page-games=1&amp;gamelistType=Search">Search</a></div>
+</div>
+<div class="content">
+<div>
+    <div style="float:right; text-align:right"><a
+            href="gamelistings.php?gamelistType=My games&amp;page-games=1#top"><img
+            src="images/historyicons/Start_disabled.png"
+            alt="First" title="First page"/></a> <a
+            href="gamelistings.php?gamelistType=My games&amp;page-games=1#top"><img
+            src="images/historyicons/Backward_disabled.png"
+            alt="Previous" title="Previous page"/></a>
+        <a href="gamelistings.php?gamelistType=My games&amp;page-games=2#top"><img src="images/historyicons/Forward.png"
+                                                                                   alt="Next" title="Next page"/></a>
+        <img src="images/historyicons/End_disabled.png"
+             alt="Last" title="Last page (disabled when last page number unknown)"/></div>
+    <div>
+        <a name="top"></a>
+        &nbsp;
+    </div>
+    <div style="clear:both;"></div>
+</div>
+<div class="hr"></div>
+<div class="gamesList">
+<div class="gamePanel variantClassic">
+    <div class="bar titleBar"><a name="gamePanel"></a>
+
+
+        <div class="titleBarRightSide">
+            <span class="gameTimeRemaining"><span class="gameTimeRemainingNextPhase">Next:</span> <span
+                    class="timeremaining" unixtime="1326445549"
+                    unixtimefrom="1326399448">12 hours, 48 minutes</span> (<span class="timestamp"
+                                                                                 unixtime="1326445549">09:05 AM UTC</span>)</span>
+        </div>
+
+        <div class="titleBarLeftSide">
+            <span class="gameName">Killer Snow Storm</span></div>
+        <div style="clear:both"></div>
+        <div class="titleBarRightSide">
+				<span class="gameHoursPerPhase">
+					<strong>1 days</strong>
+			/phase <span class="gameTimeHoursPerPhaseText">(normal)</span>
+				</span>
+        </div>
+        <div class="titleBarLeftSide">
+            Pot: <span class="gamePot">105  <img src="images/icons/points.png" alt="D"
+                                                 title="webDiplomacy points"/></span> - <span class="gameDate">Autumn, 1901</span>,
+            <span class="gamePhase">Diplomacy</span></div>
+        <div style="clear:both"></div>
+        <div class="titleBarLeftSide" style="float:left">
+            <span class="gamePotType">No in-game messaging, Anonymous players</span>
+        </div>
+        <div style="clear:both"></div>
+
+    </div>
+    <div class="panelBarGraph occupationBar">
+        <table class="occupationBarTable">
+            <tr>
+                <td class="occupationBar1 first" style="width:12%"></td>
+                <td class="occupationBar2 " style="width:14%"></td>
+                <td class="occupationBar3 " style="width:14%"></td>
+                <td class="occupationBar4 " style="width:14%"></td>
+                <td class="occupationBar5 " style="width:14%"></td>
+                <td class="occupationBar6 " style="width:14%"></td>
+                <td class="occupationBar7 " style="width:18%"></td>
+            </tr>
+        </table>
+    </div>
+    <div class="membersList membersFullTable">
+        <table>
+            <tr class="member memberAlternate1">
+                <td class="memberLeftSide">
+                    <span class="memberCountryName"> <span class="member349725StatusIcon"><img
+                            src="images/icons/tick.png" alt="Ready"
+                            title="Ready to move to the next turn"/> </span><span class="country7  memberStatusPlaying">Russia</span></span><br/><a
+                        href="board.php?gameID=77507&toggleMute=7&rand=550#chatboxanchor"><img
+                        src="images/icons/unmute.png" alt="Mute player" title="Mute player"/></a>
+                </td>
+                <td class="memberRightSide ">
+                    <div>
+                        <div class="memberUserDetail">
+                            <span class="memberName">(Anonymous)</span>
+                        </div>
+                        <div class="memberGameDetail">
+					<span class="memberUnitCount"><span class="memberSCCount"><em>4</em> supply-centers,
+			<em class="neutral">4</em> units</span>
+				</span>
+                        </div>
+                        <div style="clear:both"></div>
+                    </div>
+                    <div class="panelBarGraph memberProgressBar">
+                        <table class="memberProgressBarTable">
+                            <tr>
+                                <td class="memberProgressBarSCs first" style="width:22%"></td>
+                                <td class="memberProgressBarRemaining " style="width:78%"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            <tr class="member memberAlternate2">
+                <td class="memberLeftSide">
+                    <span class="memberCountryName"> <span class="member349713StatusIcon"><img
+                            src="images/icons/tick.png" alt="Ready"
+                            title="Ready to move to the next turn"/> </span><span class="country2  memberStatusPlaying">France</span></span><br/><a
+                        href="board.php?gameID=77507&toggleMute=2&rand=24609#chatboxanchor"><img
+                        src="images/icons/unmute.png" alt="Mute player" title="Mute player"/></a>
+                </td>
+                <td class="memberRightSide ">
+                    <div>
+                        <div class="memberUserDetail">
+                            <span class="memberName">(Anonymous)</span>
+                        </div>
+                        <div class="memberGameDetail">
+					<span class="memberUnitCount"><span class="memberSCCount"><em>3</em> supply-centers,
+			<em class="neutral">3</em> units</span>
+				</span>
+                        </div>
+                        <div style="clear:both"></div>
+                    </div>
+                    <div class="panelBarGraph memberProgressBar">
+                        <table class="memberProgressBarTable">
+                            <tr>
+                                <td class="memberProgressBarSCs first" style="width:17%"></td>
+                                <td class="memberProgressBarRemaining " style="width:83%"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            <tr class="member memberAlternate1">
+                <td class="memberLeftSide">
+                    <span class="memberCountryName"> <span class="member349708StatusIcon"><img
+                            src="images/icons/tick.png" alt="Ready"
+                            title="Ready to move to the next turn"/> </span><span class="country3  memberStatusPlaying">Italy</span></span><br/><a
+                        href="board.php?gameID=77507&toggleMute=3&rand=98624#chatboxanchor"><img
+                        src="images/icons/unmute.png" alt="Mute player" title="Mute player"/></a>
+                </td>
+                <td class="memberRightSide ">
+                    <div>
+                        <div class="memberUserDetail">
+                            <span class="memberName">(Anonymous)</span>
+                        </div>
+                        <div class="memberGameDetail">
+					<span class="memberUnitCount"><span class="memberSCCount"><em>3</em> supply-centers,
+			<em class="neutral">3</em> units</span>
+				</span>
+                        </div>
+                        <div style="clear:both"></div>
+                    </div>
+                    <div class="panelBarGraph memberProgressBar">
+                        <table class="memberProgressBarTable">
+                            <tr>
+                                <td class="memberProgressBarSCs first" style="width:17%"></td>
+                                <td class="memberProgressBarRemaining " style="width:83%"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            <tr class="member memberAlternate2">
+                <td class="memberLeftSide">
+                    <span class="memberCountryName"> <span class="member349762StatusIcon"><img
+                            src="images/icons/tick.png" alt="Ready"
+                            title="Ready to move to the next turn"/> </span><span
+                            class="country6 memberYourCountry memberStatusPlaying">Turkey</span></span>
+                </td>
+                <td class="memberRightSide ">
+                    <div>
+                        <div class="memberUserDetail">
+					<span class="memberName"><a href="profile.php?userID=37463">arcticfox</a>
+				<img style="display:none;" class="userOnlineImg" userID="37463" src="images/icons/online.png"
+                     alt="Online" title="User currently logged on"/>
+				<span class="points">(194 <img src="images/icons/points.png" alt="D"
+                                               title="webDiplomacy points"/>)</span></span>
+                        </div>
+                        <div class="memberGameDetail">
+					<span class="memberUnitCount"><span class="memberSCCount"><em>3</em> supply-centers,
+			<em class="neutral">3</em> units</span>
+				</span>
+                        </div>
+                        <div style="clear:both"></div>
+                    </div>
+                    <div class="panelBarGraph memberProgressBar">
+                        <table class="memberProgressBarTable">
+                            <tr>
+                                <td class="memberProgressBarSCs first" style="width:17%"></td>
+                                <td class="memberProgressBarRemaining " style="width:83%"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            <tr class="member memberAlternate1">
+                <td class="memberLeftSide">
+                    <span class="memberCountryName"> <span class="member349747StatusIcon"><img
+                            src="images/icons/alert.png" alt="Not received" title="No orders submitted!"/> </span><span
+                            class="country5  memberStatusPlaying">Austria</span></span><br/><a
+                        href="board.php?gameID=77507&toggleMute=5&rand=3931#chatboxanchor"><img
+                        src="images/icons/unmute.png" alt="Mute player" title="Mute player"/></a>
+                </td>
+                <td class="memberRightSide ">
+                    <div>
+                        <div class="memberUserDetail">
+                            <span class="memberName">(Anonymous)</span>
+                        </div>
+                        <div class="memberGameDetail">
+					<span class="memberUnitCount"><span class="memberSCCount"><em>3</em> supply-centers,
+			<em class="neutral">3</em> units</span>
+				</span>
+                        </div>
+                        <div style="clear:both"></div>
+                    </div>
+                    <div class="panelBarGraph memberProgressBar">
+                        <table class="memberProgressBarTable">
+                            <tr>
+                                <td class="memberProgressBarSCs first" style="width:17%"></td>
+                                <td class="memberProgressBarRemaining " style="width:83%"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            <tr class="member memberAlternate2">
+                <td class="memberLeftSide">
+                    <span class="memberCountryName"> <span class="member349699StatusIcon"><img
+                            src="images/icons/alert.png" alt="Not received" title="No orders submitted!"/> </span><span
+                            class="country1  memberStatusPlaying">England</span></span><br/><a
+                        href="board.php?gameID=77507&toggleMute=1&rand=18165#chatboxanchor"><img
+                        src="images/icons/unmute.png" alt="Mute player" title="Mute player"/></a>
+                </td>
+                <td class="memberRightSide ">
+                    <div>
+                        <div class="memberUserDetail">
+                            <span class="memberName">(Anonymous)</span>
+                        </div>
+                        <div class="memberGameDetail">
+					<span class="memberUnitCount"><span class="memberSCCount"><em>3</em> supply-centers,
+			<em class="neutral">3</em> units</span>
+				</span>
+                        </div>
+                        <div style="clear:both"></div>
+                    </div>
+                    <div class="panelBarGraph memberProgressBar">
+                        <table class="memberProgressBarTable">
+                            <tr>
+                                <td class="memberProgressBarSCs first" style="width:17%"></td>
+                                <td class="memberProgressBarRemaining " style="width:83%"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            <tr class="member memberAlternate1">
+                <td class="memberLeftSide">
+                    <span class="memberCountryName"> <span class="member349723StatusIcon"><img
+                            src="images/icons/tick.png" alt="Ready"
+                            title="Ready to move to the next turn"/> </span><span class="country4  memberStatusPlaying">Germany</span></span><br/><a
+                        href="board.php?gameID=77507&toggleMute=4&rand=90902#chatboxanchor"><img
+                        src="images/icons/unmute.png" alt="Mute player" title="Mute player"/></a>
+                </td>
+                <td class="memberRightSide ">
+                    <div>
+                        <div class="memberUserDetail">
+                            <span class="memberName">(Anonymous)</span>
+                        </div>
+                        <div class="memberGameDetail">
+					<span class="memberUnitCount"><span class="memberSCCount"><em>3</em> supply-centers,
+			<em class="neutral">3</em> units</span>
+				</span>
+                        </div>
+                        <div style="clear:both"></div>
+                    </div>
+                    <div class="panelBarGraph memberProgressBar">
+                        <table class="memberProgressBarTable">
+                            <tr>
+                                <td class="memberProgressBarSCs first" style="width:17%"></td>
+                                <td class="memberProgressBarRemaining " style="width:83%"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="panelBarGraph occupationBar">
+        <table class="occupationBarTable">
+            <tr>
+                <td class="occupationBar1 first" style="width:12%"></td>
+                <td class="occupationBar2 " style="width:14%"></td>
+                <td class="occupationBar3 " style="width:14%"></td>
+                <td class="occupationBar4 " style="width:14%"></td>
+                <td class="occupationBar5 " style="width:14%"></td>
+                <td class="occupationBar6 " style="width:14%"></td>
+                <td class="occupationBar7 " style="width:18%"></td>
+            </tr>
+        </table>
+    </div>
+
+
+    <div class="bar enterBar">
+        <div class="enterBarJoin">
+
+        </div>
+        <div class="enterBarOpen">
+            <a href="board.php?gameID=77507#gamePanel">Open</a>
+        </div>
+        <div style="clear:both"></div>
+    </div>
+
+    <div class="bar lastBar"></div>
+</div>
+<div class="hr"></div>
+<div class="gamePanel variantClassic">
+    <div class="bar titleBar"><a name="gamePanel"></a>
+
+
+        <div class="titleBarRightSide">
+            <span class="gameTimeRemaining"><span class="gameTimeRemainingNextPhase">Next:</span> <span
+                    class="timeremaining" unixtime="1326468295"
+                    unixtimefrom="1326399448">19 hours, 7 minutes</span> (<span class="timestamp" unixtime="1326468295">03:24 PM UTC</span>)</span>
+        </div>
+
+        <div class="titleBarLeftSide">
+            <span class="gameName">DIP Player with a Dragon Tatoo</span></div>
+        <div style="clear:both"></div>
+        <div class="titleBarRightSide">
+				<span class="gameHoursPerPhase">
+					<strong>1 days</strong>
+			/phase <span class="gameTimeHoursPerPhaseText">(normal)</span>
+				</span>
+        </div>
+        <div class="titleBarLeftSide">
+            Pot: <span class="gamePot">707  <img src="images/icons/points.png" alt="D"
+                                                 title="webDiplomacy points"/></span> - <span class="gameDate">Spring, 1901</span>,
+            <span class="gamePhase">Diplomacy</span></div>
+        <div style="clear:both"></div>
+        <div class="titleBarLeftSide" style="float:left">
+            <span class="gamePotType">No in-game messaging, Anonymous players, Winner-takes-all</span>
+        </div>
+        <div style="clear:both"></div>
+
+    </div>
+    <div class="panelBarGraph occupationBar">
+        <table class="occupationBarTable">
+            <tr>
+                <td class="occupationBar1 first" style="width:12%"></td>
+                <td class="occupationBar2 " style="width:14%"></td>
+                <td class="occupationBar3 " style="width:14%"></td>
+                <td class="occupationBar4 " style="width:14%"></td>
+                <td class="occupationBar5 " style="width:14%"></td>
+                <td class="occupationBar6 " style="width:14%"></td>
+                <td class="occupationBar7 " style="width:18%"></td>
+            </tr>
+        </table>
+    </div>
+    <div class="membersList membersFullTable">
+        <table>
+            <tr class="member memberAlternate1">
+                <td class="memberLeftSide">
+                    <span class="memberCountryName"> <span class="member350206StatusIcon"><img
+                            src="images/icons/tick.png" alt="Ready"
+                            title="Ready to move to the next turn"/> </span><span class="country7  memberStatusPlaying">Russia</span></span><br/><a
+                        href="board.php?gameID=77203&toggleMute=7&rand=4194#chatboxanchor"><img
+                        src="images/icons/unmute.png" alt="Mute player" title="Mute player"/></a>
+                </td>
+                <td class="memberRightSide ">
+                    <div>
+                        <div class="memberUserDetail">
+                            <span class="memberName">(Anonymous)</span>
+                        </div>
+                        <div class="memberGameDetail">
+					<span class="memberUnitCount"><span class="memberSCCount"><em>4</em> supply-centers,
+			<em class="neutral">4</em> units</span>
+				</span>
+                        </div>
+                        <div style="clear:both"></div>
+                    </div>
+                    <div class="panelBarGraph memberProgressBar">
+                        <table class="memberProgressBarTable">
+                            <tr>
+                                <td class="memberProgressBarSCs first" style="width:22%"></td>
+                                <td class="memberProgressBarRemaining " style="width:78%"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            <tr class="member memberAlternate2">
+                <td class="memberLeftSide">
+                    <span class="memberCountryName"> <span class="member350194StatusIcon"><img
+                            src="images/icons/tick.png" alt="Ready"
+                            title="Ready to move to the next turn"/> </span><span class="country5  memberStatusPlaying">Austria</span></span><br/><a
+                        href="board.php?gameID=77203&toggleMute=5&rand=30152#chatboxanchor"><img
+                        src="images/icons/unmute.png" alt="Mute player" title="Mute player"/></a>
+                </td>
+                <td class="memberRightSide ">
+                    <div>
+                        <div class="memberUserDetail">
+                            <span class="memberName">(Anonymous)</span>
+                        </div>
+                        <div class="memberGameDetail">
+					<span class="memberUnitCount"><span class="memberSCCount"><em>3</em> supply-centers,
+			<em class="neutral">3</em> units</span>
+				</span>
+                        </div>
+                        <div style="clear:both"></div>
+                    </div>
+                    <div class="panelBarGraph memberProgressBar">
+                        <table class="memberProgressBarTable">
+                            <tr>
+                                <td class="memberProgressBarSCs first" style="width:17%"></td>
+                                <td class="memberProgressBarRemaining " style="width:83%"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            <tr class="member memberAlternate1">
+                <td class="memberLeftSide">
+                    <span class="memberCountryName"> <span class="member348432StatusIcon"><img
+                            src="images/icons/alert.png" alt="Not received" title="No orders submitted!"/> </span><span
+                            class="country3  memberStatusPlaying">Italy</span></span><br/><a
+                        href="board.php?gameID=77203&toggleMute=3&rand=71817#chatboxanchor"><img
+                        src="images/icons/unmute.png" alt="Mute player" title="Mute player"/></a>
+                </td>
+                <td class="memberRightSide ">
+                    <div>
+                        <div class="memberUserDetail">
+                            <span class="memberName">(Anonymous)</span>
+                        </div>
+                        <div class="memberGameDetail">
+					<span class="memberUnitCount"><span class="memberSCCount"><em>3</em> supply-centers,
+			<em class="neutral">3</em> units</span>
+				</span>
+                        </div>
+                        <div style="clear:both"></div>
+                    </div>
+                    <div class="panelBarGraph memberProgressBar">
+                        <table class="memberProgressBarTable">
+                            <tr>
+                                <td class="memberProgressBarSCs first" style="width:17%"></td>
+                                <td class="memberProgressBarRemaining " style="width:83%"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            <tr class="member memberAlternate2">
+                <td class="memberLeftSide">
+                    <span class="memberCountryName"> <span class="member348666StatusIcon"><img
+                            src="images/icons/tick.png" alt="Ready"
+                            title="Ready to move to the next turn"/> </span><span class="country2  memberStatusPlaying">France</span></span><br/><a
+                        href="board.php?gameID=77203&toggleMute=2&rand=66783#chatboxanchor"><img
+                        src="images/icons/unmute.png" alt="Mute player" title="Mute player"/></a>
+                </td>
+                <td class="memberRightSide ">
+                    <div>
+                        <div class="memberUserDetail">
+                            <span class="memberName">(Anonymous)</span>
+                        </div>
+                        <div class="memberGameDetail">
+					<span class="memberUnitCount"><span class="memberSCCount"><em>3</em> supply-centers,
+			<em class="neutral">3</em> units</span>
+				</span>
+                        </div>
+                        <div style="clear:both"></div>
+                    </div>
+                    <div class="panelBarGraph memberProgressBar">
+                        <table class="memberProgressBarTable">
+                            <tr>
+                                <td class="memberProgressBarSCs first" style="width:17%"></td>
+                                <td class="memberProgressBarRemaining " style="width:83%"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            <tr class="member memberAlternate1">
+                <td class="memberLeftSide">
+                    <span class="memberCountryName"> <span class="member350205StatusIcon"><img
+                            src="images/icons/tick.png" alt="Ready"
+                            title="Ready to move to the next turn"/> </span><span class="country4  memberStatusPlaying">Germany</span></span><br/><a
+                        href="board.php?gameID=77203&toggleMute=4&rand=76477#chatboxanchor"><img
+                        src="images/icons/unmute.png" alt="Mute player" title="Mute player"/></a>
+                </td>
+                <td class="memberRightSide ">
+                    <div>
+                        <div class="memberUserDetail">
+                            <span class="memberName">(Anonymous)</span>
+                        </div>
+                        <div class="memberGameDetail">
+					<span class="memberUnitCount"><span class="memberSCCount"><em>3</em> supply-centers,
+			<em class="neutral">3</em> units</span>
+				</span>
+                        </div>
+                        <div style="clear:both"></div>
+                    </div>
+                    <div class="panelBarGraph memberProgressBar">
+                        <table class="memberProgressBarTable">
+                            <tr>
+                                <td class="memberProgressBarSCs first" style="width:17%"></td>
+                                <td class="memberProgressBarRemaining " style="width:83%"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            <tr class="member memberAlternate2">
+                <td class="memberLeftSide">
+                    <span class="memberCountryName"> <span class="member350231StatusIcon"><img
+                            src="images/icons/tick_faded.png" alt="Completed"
+                            title="Orders completed, but not ready for next turn"/> </span><span
+                            class="country6  memberStatusPlaying">Turkey</span></span><br/><a
+                        href="board.php?gameID=77203&toggleMute=6&rand=14739#chatboxanchor"><img
+                        src="images/icons/unmute.png" alt="Mute player" title="Mute player"/></a>
+                </td>
+                <td class="memberRightSide ">
+                    <div>
+                        <div class="memberUserDetail">
+                            <span class="memberName">(Anonymous)</span>
+                        </div>
+                        <div class="memberGameDetail">
+					<span class="memberUnitCount"><span class="memberSCCount"><em>3</em> supply-centers,
+			<em class="neutral">3</em> units</span>
+				</span>
+                        </div>
+                        <div style="clear:both"></div>
+                    </div>
+                    <div class="panelBarGraph memberProgressBar">
+                        <table class="memberProgressBarTable">
+                            <tr>
+                                <td class="memberProgressBarSCs first" style="width:17%"></td>
+                                <td class="memberProgressBarRemaining " style="width:83%"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            <tr class="member memberAlternate1">
+                <td class="memberLeftSide">
+                    <span class="memberCountryName"> <span class="member350225StatusIcon"><img
+                            src="images/icons/tick.png" alt="Ready"
+                            title="Ready to move to the next turn"/> </span><span
+                            class="country1 memberYourCountry memberStatusPlaying">England</span></span>
+                </td>
+                <td class="memberRightSide ">
+                    <div>
+                        <div class="memberUserDetail">
+					<span class="memberName"><a href="profile.php?userID=37463">arcticfox</a>
+				<img style="display:none;" class="userOnlineImg" userID="37463" src="images/icons/online.png"
+                     alt="Online" title="User currently logged on"/>
+				<span class="points">(194 <img src="images/icons/points.png" alt="D"
+                                               title="webDiplomacy points"/>)</span></span>
+                        </div>
+                        <div class="memberGameDetail">
+					<span class="memberUnitCount"><span class="memberSCCount"><em>3</em> supply-centers,
+			<em class="neutral">3</em> units</span>
+				</span>
+                        </div>
+                        <div style="clear:both"></div>
+                    </div>
+                    <div class="panelBarGraph memberProgressBar">
+                        <table class="memberProgressBarTable">
+                            <tr>
+                                <td class="memberProgressBarSCs first" style="width:17%"></td>
+                                <td class="memberProgressBarRemaining " style="width:83%"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="panelBarGraph occupationBar">
+        <table class="occupationBarTable">
+            <tr>
+                <td class="occupationBar1 first" style="width:12%"></td>
+                <td class="occupationBar2 " style="width:14%"></td>
+                <td class="occupationBar3 " style="width:14%"></td>
+                <td class="occupationBar4 " style="width:14%"></td>
+                <td class="occupationBar5 " style="width:14%"></td>
+                <td class="occupationBar6 " style="width:14%"></td>
+                <td class="occupationBar7 " style="width:18%"></td>
+            </tr>
+        </table>
+    </div>
+
+
+    <div class="bar enterBar">
+        <div class="enterBarJoin">
+
+        </div>
+        <div class="enterBarOpen">
+            <a href="board.php?gameID=77203#gamePanel">Open</a>
+        </div>
+        <div style="clear:both"></div>
+    </div>
+
+    <div class="bar lastBar"></div>
+</div>
+<div class="hr"></div>
+<div class="gamePanel variantClassic">
+    <div class="bar titleBar"><a name="gamePanel"></a>
+
+
+        <div class="titleBarRightSide">
+            <span class="gameTimeRemaining"><span class="gameTimeRemainingNextPhase">Next:</span> <span
+                    class="timeremaining" unixtime="1326493713" unixtimefrom="1326399448">1 days, 2 hours</span> (<span
+                    class="timestamp" unixtime="1326493713">Fri 10 PM UTC</span>)</span>
+        </div>
+
+        <div class="titleBarLeftSide">
+            <img src="images/icons/lock.png" alt="Private" title="This is a private game; password needed!"/> <span
+                class="gameName">Every Man Must Route His Own Packets</span></div>
+        <div style="clear:both"></div>
+        <div class="titleBarRightSide">
+				<span class="gameHoursPerPhase">
+					<strong>3 days</strong>
+			/phase <span class="gameTimeHoursPerPhaseText">(very slow)</span>
+				</span>
+        </div>
+        <div class="titleBarLeftSide">
+            Pot: <span class="gamePot">140  <img src="images/icons/points.png" alt="D"
+                                                 title="webDiplomacy points"/></span> - <span class="gameDate">Spring, 1901</span>,
+            <span class="gamePhase">Diplomacy</span></div>
+        <div style="clear:both"></div>
+
+    </div>
+    <div class="panelBarGraph occupationBar">
+        <table class="occupationBarTable">
+            <tr>
+                <td class="occupationBar1 first" style="width:12%"></td>
+                <td class="occupationBar2 " style="width:14%"></td>
+                <td class="occupationBar3 " style="width:14%"></td>
+                <td class="occupationBar4 " style="width:14%"></td>
+                <td class="occupationBar5 " style="width:14%"></td>
+                <td class="occupationBar6 " style="width:14%"></td>
+                <td class="occupationBar7 " style="width:18%"></td>
+            </tr>
+        </table>
+    </div>
+    <div class="membersList membersFullTable">
+        <table>
+            <tr class="member memberAlternate1">
+                <td class="memberLeftSide">
+                    <span class="memberCountryName"> <span class="member349134StatusIcon"><img
+                            src="images/icons/alert.png" alt="Not received" title="No orders submitted!"/> </span><span
+                            class="country7  memberStatusPlaying">Russia</span></span><br/><a
+                        href="board.php?gameID=77361&toggleMute=7&rand=88005#chatboxanchor"><img
+                        src="images/icons/unmute.png" alt="Mute player" title="Mute player"/></a>
+                </td>
+                <td class="memberRightSide ">
+                    <div>
+                        <div class="memberUserDetail">
+					<span class="memberName"><a href="profile.php?userID=38731">tjkopena</a>
+				<img style="display:none;" class="userOnlineImg" userID="38731" src="images/icons/online.png"
+                     alt="Online" title="User currently logged on"/>
+				<span class="points">(105 <img src="images/icons/points.png" alt="D"
+                                               title="webDiplomacy points"/>)</span></span>
+                        </div>
+                        <div class="memberGameDetail">
+					<span class="memberUnitCount"><span class="memberSCCount"><em>4</em> supply-centers,
+			<em class="neutral">4</em> units</span>
+				</span>
+                        </div>
+                        <div style="clear:both"></div>
+                    </div>
+                    <div class="panelBarGraph memberProgressBar">
+                        <table class="memberProgressBarTable">
+                            <tr>
+                                <td class="memberProgressBarSCs first" style="width:22%"></td>
+                                <td class="memberProgressBarRemaining " style="width:78%"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            <tr class="member memberAlternate2">
+                <td class="memberLeftSide">
+                    <span class="memberCountryName"> <span class="member349136StatusIcon"><img
+                            src="images/icons/tick.png" alt="Ready"
+                            title="Ready to move to the next turn"/> </span><span
+                            class="country2 memberYourCountry memberStatusPlaying">France</span></span>
+                </td>
+                <td class="memberRightSide ">
+                    <div>
+                        <div class="memberUserDetail">
+					<span class="memberName"><a href="profile.php?userID=37463">arcticfox</a>
+				<img style="display:none;" class="userOnlineImg" userID="37463" src="images/icons/online.png"
+                     alt="Online" title="User currently logged on"/>
+				<span class="points">(194 <img src="images/icons/points.png" alt="D"
+                                               title="webDiplomacy points"/>)</span></span>
+                        </div>
+                        <div class="memberGameDetail">
+					<span class="memberUnitCount"><span class="memberSCCount"><em>3</em> supply-centers,
+			<em class="neutral">3</em> units</span>
+				</span>
+                        </div>
+                        <div style="clear:both"></div>
+                    </div>
+                    <div class="panelBarGraph memberProgressBar">
+                        <table class="memberProgressBarTable">
+                            <tr>
+                                <td class="memberProgressBarSCs first" style="width:17%"></td>
+                                <td class="memberProgressBarRemaining " style="width:83%"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            <tr class="member memberAlternate1">
+                <td class="memberLeftSide">
+                    <span class="memberCountryName"> <span class="member349139StatusIcon"><img
+                            src="images/icons/tick.png" alt="Ready"
+                            title="Ready to move to the next turn"/> </span><span class="country3  memberStatusPlaying">Italy</span></span><br/><a
+                        href="board.php?gameID=77361&toggleMute=3&rand=56876#chatboxanchor"><img
+                        src="images/icons/unmute.png" alt="Mute player" title="Mute player"/></a>
+                </td>
+                <td class="memberRightSide ">
+                    <div>
+                        <div class="memberUserDetail">
+					<span class="memberName"><a href="profile.php?userID=37467">tom5760</a>
+				<img style="display:none;" class="userOnlineImg" userID="37467" src="images/icons/online.png"
+                     alt="Online" title="User currently logged on"/>
+				<span class="points">(105 <img src="images/icons/points.png" alt="D"
+                                               title="webDiplomacy points"/>)</span></span>
+                        </div>
+                        <div class="memberGameDetail">
+					<span class="memberUnitCount"><span class="memberSCCount"><em>3</em> supply-centers,
+			<em class="neutral">3</em> units</span>
+				</span>
+                        </div>
+                        <div style="clear:both"></div>
+                    </div>
+                    <div class="panelBarGraph memberProgressBar">
+                        <table class="memberProgressBarTable">
+                            <tr>
+                                <td class="memberProgressBarSCs first" style="width:17%"></td>
+                                <td class="memberProgressBarRemaining " style="width:83%"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            <tr class="member memberAlternate2">
+                <td class="memberLeftSide">
+                    <span class="memberCountryName"> <span class="member349359StatusIcon"><img
+                            src="images/icons/tick_faded.png" alt="Completed"
+                            title="Orders completed, but not ready for next turn"/> </span><span
+                            class="country4  memberStatusPlaying">Germany</span></span><br/><a
+                        href="board.php?gameID=77361&toggleMute=4&rand=22644#chatboxanchor"><img
+                        src="images/icons/unmute.png" alt="Mute player" title="Mute player"/></a>
+                </td>
+                <td class="memberRightSide ">
+                    <div>
+                        <div class="memberUserDetail">
+					<span class="memberName"><a href="profile.php?userID=37491">volker48</a>
+				<img style="display:none;" class="userOnlineImg" userID="37491" src="images/icons/online.png"
+                     alt="Online" title="User currently logged on"/>
+				<span class="points">(80 <img src="images/icons/points.png" alt="D"
+                                              title="webDiplomacy points"/>)</span></span>
+                        </div>
+                        <div class="memberGameDetail">
+					<span class="memberUnitCount"><span class="memberSCCount"><em>3</em> supply-centers,
+			<em class="neutral">3</em> units</span>
+				</span>
+                        </div>
+                        <div style="clear:both"></div>
+                    </div>
+                    <div class="panelBarGraph memberProgressBar">
+                        <table class="memberProgressBarTable">
+                            <tr>
+                                <td class="memberProgressBarSCs first" style="width:17%"></td>
+                                <td class="memberProgressBarRemaining " style="width:83%"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            <tr class="member memberAlternate1">
+                <td class="memberLeftSide">
+                    <span class="memberCountryName"> <span class="member349531StatusIcon"><img
+                            src="images/icons/tick.png" alt="Ready"
+                            title="Ready to move to the next turn"/> </span><span class="country6  memberStatusPlaying">Turkey</span></span><br/><a
+                        href="board.php?gameID=77361&toggleMute=6&rand=18268#chatboxanchor"><img
+                        src="images/icons/unmute.png" alt="Mute player" title="Mute player"/></a>
+                </td>
+                <td class="memberRightSide ">
+                    <div>
+                        <div class="memberUserDetail">
+					<span class="memberName"><a href="profile.php?userID=37459">DeadlySinner</a>
+				<img style="display:none;" class="userOnlineImg" userID="37459" src="images/icons/online.png"
+                     alt="Online" title="User currently logged on"/>
+				<span class="points">(80 <img src="images/icons/points.png" alt="D"
+                                              title="webDiplomacy points"/>)</span></span>
+                        </div>
+                        <div class="memberGameDetail">
+					<span class="memberUnitCount"><span class="memberSCCount"><em>3</em> supply-centers,
+			<em class="neutral">3</em> units</span>
+				</span>
+                        </div>
+                        <div style="clear:both"></div>
+                    </div>
+                    <div class="panelBarGraph memberProgressBar">
+                        <table class="memberProgressBarTable">
+                            <tr>
+                                <td class="memberProgressBarSCs first" style="width:17%"></td>
+                                <td class="memberProgressBarRemaining " style="width:83%"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            <tr class="member memberAlternate2">
+                <td class="memberLeftSide">
+                    <span class="memberCountryName"> <span class="member349141StatusIcon"><img
+                            src="images/icons/tick.png" alt="Ready"
+                            title="Ready to move to the next turn"/> </span><span class="country5  memberStatusPlaying">Austria</span></span><br/><a
+                        href="board.php?gameID=77361&toggleMute=5&rand=41747#chatboxanchor"><img
+                        src="images/icons/unmute.png" alt="Mute player" title="Mute player"/></a>
+                </td>
+                <td class="memberRightSide ">
+                    <div>
+                        <div class="memberUserDetail">
+					<span class="memberName"><a href="profile.php?userID=37464">urlass</a>
+				<img style="display:none;" class="userOnlineImg" userID="37464" src="images/icons/online.png"
+                     alt="Online" title="User currently logged on"/>
+				<span class="points">(80 <img src="images/icons/points.png" alt="D"
+                                              title="webDiplomacy points"/>)</span></span>
+                        </div>
+                        <div class="memberGameDetail">
+					<span class="memberUnitCount"><span class="memberSCCount"><em>3</em> supply-centers,
+			<em class="neutral">3</em> units</span>
+				</span>
+                        </div>
+                        <div style="clear:both"></div>
+                    </div>
+                    <div class="panelBarGraph memberProgressBar">
+                        <table class="memberProgressBarTable">
+                            <tr>
+                                <td class="memberProgressBarSCs first" style="width:17%"></td>
+                                <td class="memberProgressBarRemaining " style="width:83%"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            <tr class="member memberAlternate1">
+                <td class="memberLeftSide">
+                    <span class="memberCountryName"> <span class="member349520StatusIcon"><img
+                            src="images/icons/tick.png" alt="Ready"
+                            title="Ready to move to the next turn"/> </span><span class="country1  memberStatusPlaying">England</span></span><br/><a
+                        href="board.php?gameID=77361&toggleMute=1&rand=44236#chatboxanchor"><img
+                        src="images/icons/unmute.png" alt="Mute player" title="Mute player"/></a>
+                </td>
+                <td class="memberRightSide ">
+                    <div>
+                        <div class="memberUserDetail">
+					<span class="memberName"><a href="profile.php?userID=41100">ketsugami</a>
+				<img style="display:none;" class="userOnlineImg" userID="41100" src="images/icons/online.png"
+                     alt="Online" title="User currently logged on"/>
+				<span class="points">(80 <img src="images/icons/points.png" alt="D"
+                                              title="webDiplomacy points"/>)</span></span>
+                        </div>
+                        <div class="memberGameDetail">
+					<span class="memberUnitCount"><span class="memberSCCount"><em>3</em> supply-centers,
+			<em class="neutral">3</em> units</span>
+				</span>
+                        </div>
+                        <div style="clear:both"></div>
+                    </div>
+                    <div class="panelBarGraph memberProgressBar">
+                        <table class="memberProgressBarTable">
+                            <tr>
+                                <td class="memberProgressBarSCs first" style="width:17%"></td>
+                                <td class="memberProgressBarRemaining " style="width:83%"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="panelBarGraph occupationBar">
+        <table class="occupationBarTable">
+            <tr>
+                <td class="occupationBar1 first" style="width:12%"></td>
+                <td class="occupationBar2 " style="width:14%"></td>
+                <td class="occupationBar3 " style="width:14%"></td>
+                <td class="occupationBar4 " style="width:14%"></td>
+                <td class="occupationBar5 " style="width:14%"></td>
+                <td class="occupationBar6 " style="width:14%"></td>
+                <td class="occupationBar7 " style="width:18%"></td>
+            </tr>
+        </table>
+    </div>
+
+
+    <div class="bar enterBar">
+        <div class="enterBarJoin">
+
+        </div>
+        <div class="enterBarOpen">
+            <a href="board.php?gameID=77361#gamePanel">Open</a>
+        </div>
+        <div style="clear:both"></div>
+    </div>
+
+    <div class="bar lastBar"></div>
+</div>
+<div class="hr"></div>
+</div>
+<div>
+    <div style="float:right; text-align:right"><a href="gamelistings.php?gamelistType=My games&amp;page-games=1#bottom"><img
+            src="images/historyicons/Start_disabled.png"
+            alt="First" title="First page"/></a> <a
+            href="gamelistings.php?gamelistType=My games&amp;page-games=1#bottom"><img
+            src="images/historyicons/Backward_disabled.png"
+            alt="Previous" title="Previous page"/></a>
+        <a href="gamelistings.php?gamelistType=My games&amp;page-games=2#bottom"><img
+                src="images/historyicons/Forward.png"
+                alt="Next" title="Next page"/></a>
+        <img src="images/historyicons/End_disabled.png"
+             alt="Last" title="Last page (disabled when last page number unknown)"/></div>
+    <div>
+        <a name="bottom"></a>
+        <a href="#top">Back to top</a>
+    </div>
+    <div style="clear:both;"></div>
+</div>
+</div>
+<div id="footer">Rendered in: <strong>0.02sec</strong> - Data retrievals: <strong>11</strong> - Data insertions:
+    <strong>2</strong> - Memory used: <strong>0.909MB</strong> <br/><br/>Logged on: <strong>102</strong> - Playing:
+    <strong>1587</strong> - Registered: <strong>41151</strong> - Pages served: <strong>80749255</strong><br/>Starting
+    games: <strong>49</strong> - Open games: <strong>105</strong> - Active games: <strong>530</strong> - Finished games:
+    <strong>29532</strong> <br/><br/>webDiplomacy version <strong>1.04</strong><br/>
+    <a href="http://sourceforge.net/projects/phpdiplomacy">
+        <img alt="webDiplomacy @ Sourceforge"
+             src="http://sourceforge.net/sflogo.php?group_id=125692"/>
+    </a><br/>Times are <strong id="UTCOffset">UTC+0:00</strong>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-1897678-4");
+            pageTracker._trackPageview();
+        } catch (err) {
+        }</script>
+    <script type="text/javascript" src="cache/stats/onlineUsers.json"></script>
+    <script type="text/javascript">
+        muteUsers = $A([]);
+        muteCountries = $A([]);
+        muteThreads = $A([]);
+    </script>
+    <script type="text/javascript" src="javascript/utility.js"></script>
+    <script type="text/javascript" src="javascript/cacheUpdate.js"></script>
+    <script type="text/javascript" src="javascript/timeHandler.js"></script>
+    <script type="text/javascript" src="javascript/forum.js"></script>
+    <script type="text/javascript" src="javascript/mute.js"></script>
+    <script type="text/javascript">
+        var UserClass = function () {
+            this.id = 37463;
+            this.username = "arcticfox";
+            this.points = 194
+            this.lastMessageIDViewed = 813347;
+            this.timeLastSessionEnded = 1326397502;
+            this.type = Array;
+            this.token = "134e197bca8ee0c0f7c4de3e45b7e323";
+        }
+        User = new UserClass();
+
+        document.observe("dom:loaded", function () {
+            onlineUsers.push(User.id);
+
+            setUserOnlineIcons();
+            setForumMessageIcons();
+            setPostsItalicized();
+            updateTimestamps();
+            updateUTCOffset();
+            updateTimers();
+
+            muteAll();
+        }, this);
+    </script>
+</div>
+</body>
+</html>
