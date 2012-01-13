@@ -7,14 +7,10 @@ import urllib2
 from FileReader import FileReader
 from MyHTMLParser import MyHTMLParser
 
-
 MY_GAMES_URL = 'http://webdiplomacy.net/gamelistings.php?gamelistType=My%20games&page='
-
 
 def digest_games(game_list):
     return
-
-
 
 class game_status (object):
     def __init__(self, name, stage, messages, about_to_miss, waiting_for_you):
@@ -27,10 +23,9 @@ class game_status (object):
         self.about_to_miss = about_to_miss
         self.waiting_for_you = waiting_for_you
 
-
-
 def read_games_page(name, password, page_num):
     page_url = MY_GAMES_URL + str(page_num)
+
     data = urllib2.urlopen(page_url,
         urllib.urlencode({'loginuser': name, 'loginpass': password})).read()
 
@@ -44,9 +39,8 @@ def read_games_page(name, password, page_num):
     return parser.games
 
 #Read multiple pages of games?
+
 def main(argv):
-    #usage?
-    #take props file as arg?
     reader = FileReader()
 
     props = reader.read_properties()
@@ -54,7 +48,7 @@ def main(argv):
         print('No properties file found')
         return
 
-    read_games_page(props['username'], props['password'], 1)
+    read_games_page(props['username'], props['password'], 3)
 
 if __name__ == '__main__':
     sys.exit(main(sys.argv))
