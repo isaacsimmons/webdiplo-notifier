@@ -5,7 +5,7 @@ import sys
 import urllib
 import urllib2
 from FileReader import FileReader
-from MyHTMLParser import MyHTMLParser
+from GameParser import GameParser
 
 MY_GAMES_URL = 'http://webdiplomacy.net/gamelistings.php?gamelistType=My%20games&page='
 
@@ -31,7 +31,7 @@ def read_games_page(name, password, page_num):
 
     print 'Read', len(data), 'bytes from ', page_url
 
-    parser = MyHTMLParser()
+    parser = GameParser()
     parser.feed(data)
 
     return parser.games

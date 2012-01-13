@@ -12,7 +12,7 @@ class STATES:
     PLAYER_NAME_WAIT = 6
 
 
-class MyHTMLParser(HTMLParser):
+class GameParser(HTMLParser):
     #TODO: check for global messages
     #TODO: don't warn on 5 min games
     #TODO: multiple result pages
