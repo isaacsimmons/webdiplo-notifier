@@ -21,9 +21,9 @@ class MyHTMLParser(HTMLParser):
     def __init__(self, debug = False):
         HTMLParser.__init__(self)
         self.debug = debug
-        self.reset()
+        self.reset_parse()
 
-    def reset(self):
+    def reset_parse(self):
         self.games = []
         self.state = STATES.NONE
         self.current_country = {}

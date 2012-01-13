@@ -31,8 +31,6 @@ def read_games_page(name, password, page_num):
 
     print 'Read', len(data), 'bytes from ', page_url
 
-    print data
-
     parser = MyHTMLParser()
     parser.feed(data)
 
@@ -48,7 +46,9 @@ def main(argv):
         print('No properties file found')
         return
 
-    read_games_page(props['username'], props['password'], 3)
+    games = read_games_page(props['username'], props['password'], 1)
+
+    print games
 
 if __name__ == '__main__':
     sys.exit(main(sys.argv))
