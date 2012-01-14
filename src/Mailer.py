@@ -38,8 +38,6 @@ class Mailer:
         for game_name in current_alerts:
             if game_name in last_alerts:
                 alerts.extend(self.diff(game_name, last_alerts[game_name], current_alerts[game_name]))
-            else:
-                alerts.append('Joined game ' + game_name)
 
         for game_name in last_alerts:
             if game_name not in current_alerts:
