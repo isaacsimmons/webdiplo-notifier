@@ -54,7 +54,8 @@ def main(argv):
 
     mailer = Mailer(props['email'])
 
-    mailer.send_alerts(last_alerts, current_alerts)
+    alerts = mailer.prepare_alerts(last_alerts, current_alerts)
+    mailer.send_alerts(alerts)
 
 if __name__ == '__main__':
     sys.exit(main(sys.argv))
