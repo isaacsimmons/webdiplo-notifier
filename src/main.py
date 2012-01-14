@@ -56,6 +56,5 @@ def main(argv):
 
     mailer.send_alerts(last_alerts, current_alerts)
 
-
 if __name__ == '__main__':
     sys.exit(main(sys.argv))

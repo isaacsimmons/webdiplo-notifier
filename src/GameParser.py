@@ -18,7 +18,8 @@ class GameParser(HTMLParser):
     #TODO: multiple result pages
     #TODO: support for pre-game values
 
-    ALERT_THRESHOLD = 300 #300s = 5 minutes
+    ALERT_THRESHOLD = 300L #300s = 5 minutes
+    #TODO: change this to better accomidate polling rate? long-running process could "plan" when it wakes up instead
     LIVE_TURN_DURATION = '5m'  #Games with 5 min turns are 'Live' and shouldn't generate alerts
 
     def __init__(self, username, debug = False):
@@ -139,10 +140,10 @@ class GameParser(HTMLParser):
             game_alerts['phase'] = game['date'] + ' ' + game['phase']
 
             #waiting for you
-            game_alerts['waiting'] = own_status != 'Ready' and num_ready >= (len(games) - 1)
+            game_alerts['waiting'] = own_status != 'Ready' and num_ready >= (len(game['countries']) - 1)
 
             #about to miss turn
-            game_alerts['timeout'] = game['time_left'] < self.ALERT_THRESHOLD and own_status != 'Ready'
+            game_alerts['timeout'] = long(game['time_left']) < self.ALERT_THRESHOLD and own_status != 'Not received'
 
             alerts[game['name']] = game_alerts
 
