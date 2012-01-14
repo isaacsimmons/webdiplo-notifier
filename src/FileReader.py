@@ -8,7 +8,7 @@ class FileReader:
     PROPERTY_FILE_NAME = 'user.properties'
     ALERTS_FILE_NAME = 'alerts.json'
     DIPLO_DIRECTORY = '.webdiplo'
-    DEFAULT_KEYS = ['username', 'password', 'email']
+    DEFAULT_KEYS = ['username', 'password', 'email', 'smtp_from', 'smtp_user', 'smtp_pass', 'smtp_server', 'smtp_port']
 
     def __init__(self, portable = False):
         #look for config in the current working directory, if not found, create location in user home

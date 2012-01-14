@@ -52,7 +52,7 @@ def main(argv):
     last_alerts = reader.load_state()
     reader.save_state(current_alerts)
 
-    mailer = Mailer(props['email'])
+    mailer = Mailer(props['email'], props['smtp_from'], props['smtp_user'], props['smtp_pass'], props['smtp_server'], props['smtp_port'])
 
     alerts = mailer.prepare_alerts(last_alerts, current_alerts)
     mailer.send_alerts(alerts)
