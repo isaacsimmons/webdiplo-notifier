@@ -42,7 +42,7 @@ class GameParser(HTMLParser):
             self.games[-1]['variant'] = attrs[0][1][10:]
             #TODO: test other variants (or possibly just stop extracting this value)
         if tag == 'span' and len(attrs) == 3 and len(attrs[0]) == 2 and attrs[0][0] == 'class' and attrs[0][1] == 'timeremaining':
-            self.games[-1]['time_left'] = int((long(attrs[1][1]) - long(attrs[2][1])) / 60L)
+            self.games[-1]['time_left'] = (long(attrs[1][1]) - long(attrs[2][1])) / 60L
         if tag == 'span' and len(attrs) == 1 and len(attrs[0]) == 2 and attrs[0][0] == 'class' and attrs[0][1] == 'gameName':
             self.state = STATES.NAME_WAIT
         if tag == 'span' and len(attrs) == 1 and len(attrs[0]) == 2 and attrs[0][0] == 'class' and attrs[0][1] == 'gameDate':
@@ -143,7 +143,7 @@ class GameParser(HTMLParser):
             game_alerts['waiting'] = own_status != 'Ready' and num_ready >= (len(game['countries']) - 1)
 
             #about to miss turn
-            game_alerts['timeout'] = long(game['time_left']) < self.ALERT_THRESHOLD and own_status != 'Not received'
+            game_alerts['timeout'] = long(game['time_left']) < self.ALERT_THRESHOLD and own_status == 'Not received'
 
             alerts[game['name']] = game_alerts
 
