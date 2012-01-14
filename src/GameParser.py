@@ -18,8 +18,12 @@ class GameParser(HTMLParser):
     #TODO: multiple result pages
     #TODO: support for pre-game values
 
-    def __init__(self, debug = False):
+    ALERT_THRESHOLD = 300 #300s = 5 minutes
+    LIVE_TURN_DURATION = '5m'  #Games with 5 min turns are 'Live' and shouldn't generate alerts
+
+    def __init__(self, username, debug = False):
         HTMLParser.__init__(self)
+        self.username = username
         self.debug = debug
         self.reset_parse()
 
@@ -67,6 +71,7 @@ class GameParser(HTMLParser):
             self.current_country['message'] = True
 
         #get game ID
+        #get game link
 
     def process_country(self):
         if 'countryName' in self.current_country:
@@ -100,3 +105,45 @@ class GameParser(HTMLParser):
         if self.state == STATES.PLAYER_NAME_WAIT:
             self.state = STATES.NONE
             self.current_country['playerName'] = data
+
+    def extract_alert_status(self, games):
+        alerts = {}
+
+        for game in games:
+            if 'name' not in game:
+                print 'Game entry with no name'
+                continue
+
+            if game['duration'] == self.LIVE_TURN_DURATION:
+                #no alerts for live games
+                continue
+
+            game_alerts = {}
+
+            own_status = None
+            num_ready = 0
+            messages = []
+
+            for country in game['countries']:
+                if country['status'] == 'Ready':
+                    num_ready += 1
+                if country['playerName'] == self.username:
+                    own_status = country['status']
+                if 'message' in country:
+                    messages.append(country['countryName'])
+
+            #messages
+            game_alerts['messages'] = messages
+
+            #phase
+            game_alerts['phase'] = game['date'] + ' ' + game['phase']
+
+            #waiting for you
+            game_alerts['waiting'] = own_status != 'Ready' and num_ready >= (len(games) - 1)
+
+            #about to miss turn
+            game_alerts['timeout'] = game['time_left'] < self.ALERT_THRESHOLD and own_status != 'Ready'
+
+            alerts[game['name']] = game_alerts
+
+        return alerts

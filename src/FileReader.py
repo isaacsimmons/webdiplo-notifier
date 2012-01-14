@@ -1,3 +1,4 @@
+import json
 import os
 
 __author__ = 'ids'
@@ -5,6 +6,7 @@ __author__ = 'ids'
 
 class FileReader:
     PROPERTY_FILE_NAME = 'user.properties'
+    ALERTS_FILE_NAME = 'alerts.json'
     DIPLO_DIRECTORY = '.webdiplo'
     DEFAULT_KEYS = ['username', 'password', 'email']
 
@@ -53,3 +55,24 @@ class FileReader:
                 return None
 
         return props
+
+    def load_state(self):
+        file_path = os.path.join(self.path, self.ALERTS_FILE_NAME)
+        if not os.path.isfile(file_path):
+            return {}
+
+        file = open(file_path, 'r')
+        str = file.read()
+        state = json.loads(str)
+        file.close()
+
+        if state:
+            return state
+        else:
+            return {}
+
+    def save_state(self, state):
+        file_path = os.path.join(self.path, self.ALERTS_FILE_NAME)
+        file = open(file_path, 'w')
+        file.write(json.dumps(state))
+        file.close()
