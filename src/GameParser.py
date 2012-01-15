@@ -18,7 +18,7 @@ class GameParser(HTMLParser):
     #TODO: multiple result pages
     #TODO: support for pre-game values
 
-    ALERT_THRESHOLD = 300L #300s = 5 minutes
+    ALERT_THRESHOLD = 900L #900s = 15 minutes
     #TODO: change this to better accomidate polling rate? long-running process could "plan" when it wakes up instead
     LIVE_TURN_DURATION = '5m'  #Games with 5 min turns are 'Live' and shouldn't generate alerts
 
