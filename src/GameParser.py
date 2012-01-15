@@ -126,10 +126,13 @@ class GameParser(HTMLParser):
             messages = []
 
             for country in game['countries']:
-                if country['status'] == 'Ready':
+                if 'status' not in country or country['status'] == 'Ready':
                     num_ready += 1
                 if country['playerName'] == self.username:
-                    own_status = country['status']
+                    if 'status' in country:
+                       own_status = country['status']
+                    else:
+                        own_status = 'Ready'
                 if 'message' in country:
                     messages.append(country['countryName'])
 
