@@ -1,4 +1,3 @@
-
 __author__ = 'ids'
 __comments__ = 'LOL my first Python program'
 
@@ -8,6 +7,7 @@ import urllib2
 from FileReader import FileReader
 from GameParser import GameParser
 from Mailer import Mailer
+from DiffUtil import prepare_alerts
 
 MY_GAMES_URL = 'http://webdiplomacy.net/gamelistings.php?gamelistType=My%20games&page='
 
@@ -54,7 +54,7 @@ def main(argv):
 
     mailer = Mailer(props['email'], props['smtp_from'], props['smtp_user'], props['smtp_pass'], props['smtp_server'], props['smtp_port'])
 
-    alerts = mailer.prepare_alerts(last_alerts, current_alerts)
+    alerts = prepare_alerts(last_alerts, current_alerts)
     mailer.send_alerts(alerts)
 
 if __name__ == '__main__':
