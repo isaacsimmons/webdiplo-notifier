@@ -11,7 +11,7 @@ from DiffUtil import prepare_alerts
 
 MY_GAMES_URL = 'http://webdiplomacy.net/gamelistings.php?gamelistType=My%20games&page='
 
-class game_status (object):
+class game_status(object):
     def __init__(self, name, stage, messages, about_to_miss, waiting_for_you):
         self.name = name
         self.variant = variant
@@ -25,10 +25,9 @@ class game_status (object):
 def read_games_page(name, password, page_num):
     page_url = MY_GAMES_URL + str(page_num)
 
-    data = urllib2.urlopen(page_url,
-        urllib.urlencode({'loginuser': name, 'loginpass': password})).read()
+    data = urllib2.urlopen(page_url, urllib.urlencode({'loginuser': name, 'loginpass': password})).read()
 
-    print 'Read', len(data), 'bytes from ', page_url
+    print('Read', len(data), 'bytes from ', page_url)
 
     parser = GameParser(name)
     parser.feed(data)

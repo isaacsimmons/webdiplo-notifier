@@ -4,7 +4,6 @@ import smtplib
 from email.mime.text import MIMEText
 
 class Mailer:
-
     def __init__(self, recipients, sender, smtp_username, smtp_password, smtp_server, smtp_port):
         self.recipients = recipients.split(';')
         self.send_address = sender
@@ -24,11 +23,11 @@ class Mailer:
         msg['From'] = self.send_address
         msg['To'] = ', '.join(self.recipients)
 
-        print msg.as_string()
+        print(msg.as_string())
 
         # Send the message via our own SMTP server, but don't include the
         # envelope header.
-        print 'Sending mail to', self.recipients
+        print('Sending mail to', self.recipients)
 
         smtp = smtplib.SMTP(self.server, self.port)
         smtp.ehlo()

@@ -10,7 +10,7 @@ class FileReader:
     DIPLO_DIRECTORY = '.webdiplo'
     DEFAULT_KEYS = ['username', 'password', 'email', 'smtp_from', 'smtp_user', 'smtp_pass', 'smtp_server', 'smtp_port']
 
-    def __init__(self, portable = False):
+    def __init__(self, portable=False):
         #look for config in the current working directory, if not found, create location in user home
         if portable:
             self.path = os.getcwd()
@@ -20,7 +20,7 @@ class FileReader:
                 os.mkdir(self.path)
 
     def write_empty_props(self, file_path):
-        print 'Creating template properties file at', file_path
+        print('Creating template properties file at', file_path)
 
         file = open(file_path, 'w')
         for key in self.DEFAULT_KEYS:
@@ -32,26 +32,25 @@ class FileReader:
             self.write_empty_props(file_path)
             return None
 
-        print 'Using config at', file_path
-
-        prop_file = file(file_path)
+        print('Using config at', file_path)
+        prop_file = open(file_path)
         props = {}
         for prop_line in prop_file:
-            prop_def= prop_line.strip()
+            prop_def = prop_line.strip()
             if not len(prop_def):
                 continue
-            if prop_def[0] in ( '!', '#' ):
+            if prop_def[0] in ('!', '#'):
                 continue
-            punctuation= [ prop_def.find(c) for c in ':= ' ] + [ len(prop_def) ]
-            found= min( [ pos for pos in punctuation if pos != -1 ] )
-            name= prop_def[:found].rstrip()
-            value= prop_def[found:].lstrip(":= ").rstrip()
-            props[name]= value
+            punctuation = [prop_def.find(c) for c in ':= '] + [len(prop_def)]
+            found = min([pos for pos in punctuation if pos != -1])
+            name = prop_def[:found].rstrip()
+            value = prop_def[found:].lstrip(":= ").rstrip()
+            props[name] = value
         prop_file.close()
 
         for prop_key in self.DEFAULT_KEYS:
             if prop_key not in props:
-                print 'Missing required property', prop_key
+                print('Missing required property', prop_key)
                 return None
 
         return props

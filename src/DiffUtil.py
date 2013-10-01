@@ -1,5 +1,4 @@
 def prepare_alerts(last_alerts, current_alerts):
-
     alerts = []
 
     for game_name in current_alerts:
