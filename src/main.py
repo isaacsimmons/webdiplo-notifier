@@ -2,8 +2,7 @@ __author__ = 'ids'
 __comments__ = 'LOL my first Python program'
 
 import sys
-import urllib
-import urllib2
+import requests
 from FileReader import FileReader
 from GameParser import GameParser
 from Mailer import Mailer
@@ -14,18 +13,19 @@ MY_GAMES_URL = 'http://webdiplomacy.net/gamelistings.php?gamelistType=My%20games
 class game_status(object):
     def __init__(self, name, stage, messages, about_to_miss, waiting_for_you):
         self.name = name
-        self.variant = variant
-        self.your_country = your_country
+        #self.variant = variant
+        #self.your_country = your_country
         self.stage = stage
         self.messages = messages
-        self.time_left = time_left
+        #self.time_left = time_left
         self.about_to_miss = about_to_miss
         self.waiting_for_you = waiting_for_you
 
 def read_games_page(name, password, page_num):
     page_url = MY_GAMES_URL + str(page_num)
 
-    data = urllib2.urlopen(page_url, urllib.urlencode({'loginuser': name, 'loginpass': password})).read()
+    response = requests.get(page_url, auth=(name, password))
+    data = response.text
 
     print('Read', len(data), 'bytes from ', page_url)
 
