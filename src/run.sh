@@ -2,6 +2,6 @@
 
 while true
 do
-  python main.py
+  python3 main.py
   sleep 300
 done
