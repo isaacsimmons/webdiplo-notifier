@@ -3,10 +3,11 @@ __comments__ = 'LOL my first Python program'
 
 import sys
 import requests
-from FileReader import FileReader
-from GameParser import GameParser
-from Mailer import Mailer
-from DiffUtil import prepare_alerts
+from bs4 import BeautifulSoup
+from webdip import FileReader
+#from webdip import GameParser
+from webdip import Mailer
+from webdip.DiffUtil import prepare_alerts
 
 MY_GAMES_URL = 'http://webdiplomacy.net/gamelistings.php?gamelistType=My%20games&page='
 
@@ -29,18 +30,21 @@ def read_games_page(name, password, page_num):
 
     print('Read', len(data), 'bytes from ', page_url)
 
-    parser = GameParser(name)
-    parser.feed(data)
+    soup = BeautifulSoup(data)
+    print(soup.url)
+    #parser = GameParser(name)
+    #parser.feed(data)
 
-    games = parser.games
-    alerts = parser.extract_alert_status(games)
+    #games = parser.games
+    alerts = {}
+    #alerts = parser.extract_alert_status(games)
 
     return alerts
 
 #Read multiple pages of games?
 
 def main(argv):
-    reader = FileReader()
+    reader = FileReader.FileReader()
 
     props = reader.read_properties()
     if not props:
@@ -51,7 +55,7 @@ def main(argv):
     last_alerts = reader.load_state()
     reader.save_state(current_alerts)
 
-    mailer = Mailer(props['email'], props['smtp_from'], props['smtp_user'], props['smtp_pass'], props['smtp_server'], props['smtp_port'])
+    mailer = Mailer.Mailer(props['email'], props['smtp_from'], props['smtp_user'], props['smtp_pass'], props['smtp_server'], props['smtp_port'])
 
     alerts = prepare_alerts(last_alerts, current_alerts)
     mailer.send_alerts(alerts)

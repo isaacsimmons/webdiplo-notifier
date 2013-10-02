@@ -1,7 +1,4 @@
-from HTMLParser import HTMLParser
-
 __author__ = 'ids'
-
 
 class STATES:
     NONE = 0
